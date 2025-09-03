@@ -1,8 +1,8 @@
 require 'fontforge_ruby'
 
-source_folder = 'more-fonts'
-base_path = `pwd`
+base_path = `pwd`.chomp
 
+puts "--- base_path: #{base_path}"
 puts "--- args: #{ARGV}"
 
 files = Dir.entries("#{base_path}/input")
@@ -61,4 +61,3 @@ else
   
   threads.each(&:join)
 end
-
